@@ -1,0 +1,154 @@
+html{
+  height:110%;
+}
+body{
+  background: #0f121f;
+  height:110%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:azure;
+
+}
+body*{
+  font-family:cursive;
+}
+
+h1,h2,h3,h4,h5{
+  font-weight:normal;
+  margin:0;
+  color:aqua;
+}
+a,a:hover,a:visited{
+  color:aqua;
+  text-decoration:none;
+
+}
+
+.wrapper{
+  max-width:1000px;
+  margin:0 auto;
+}
+
+div.wrapper h1{
+  text-align:center;
+  margin:50px;
+  font-size:2.4em;
+
+}
+
+header{
+  display:grid;
+ grid-template-columns: 1fr 1fr;
+ padding:20px 0;
+
+}
+
+nav{
+  justify-self:end;
+}
+nav li{
+  display:inline-block;
+  margin-left:20px;
+
+}
+nav button{
+  background:none;
+  color:white;
+  cursor:pointer;
+  border:0;
+  font-size:1em;
+}
+.articles{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-gap:30px;
+}
+.article{
+  padding:10px;
+  border:1px solid #00dba0;
+  position:relative;
+  padding-bottom:40px;
+}
+
+p.author{
+  padding:10px;
+  background:#00dba0;
+  position:absolute;
+  right:0;
+  bottom:0;
+  margin:0;
+  color:black;
+
+}
+.article h2{
+  font-size:1.2em;
+}
+
+.article-detail .article{
+padding:0;
+}
+.article-detail .article img{
+  width:100%;
+  height:350px;
+
+}
+
+.article-detail .article h2{
+  text-align:center;
+  margin:20px auto;
+  font-size :2em;
+}
+
+.article-detail .article p{
+  text-align:center;
+}
+
+.site-form{
+  margin:60px;
+  border: 1px solid #00dba0;
+  padding:20px;
+}
+
+.site-form input,.site-form textarea{
+  display:block;
+  margin:20px 0 0 0;
+  padding:10px;
+}
+
+a.highlight{
+  border:1px solid #00dba0;
+  color:#00dba0;
+  background: #0f121f;
+  padding:10px;
+  border-radius:4px;
+}
+
+.errorlist li{
+ padding:10px;
+ border:1px solid #ff5722;
+ list-style-type:none;
+ color:#ff5722;
+ margin:10px;
+}
+
+.errorlist{
+padding:0;
+}
+
+.helptext ,.helptext ul{
+  margin: 0 auto 20px;
+  color:#bbb;
+  font-size:0.9em;
+  display:block;
+}
+
+.site-form input[type ="submit"]
+{
+  background:#00dba0;
+  border:1px solid black;
+  color:black;
+  font-size:0.8em;
+ border-radius:10px;
+ margin:10px 0px;
+}

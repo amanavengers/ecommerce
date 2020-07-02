@@ -1,0 +1,54 @@
+{%extends 'shop/base.html'%}
+{%block title%} Sell {%endblock%}
+{%load crispy_forms_tags%}
+{%block body%}
+<div class="container">
+    <div class = "row">
+        <div class ="col-sm-2">
+            </div>
+        <div class ="col-sm-8">
+<div class = "content-section">
+
+<form method = "POST" enctype="multipart/form-data">
+    {% csrf_token %}
+<!--    if we leave action as empty ,then views function corresponding to the current url will be called.-->
+<!--    for security reason-->
+    <fieldset class="form-group">
+        <legend class = "border-bottom mb-4"> New Product </legend>
+         {{ form|crispy }}
+    </fieldset>
+    <div class = "form-group">
+        <button class = "btn btn-outline-info" type = "submit">Post</button>
+    </div>
+</form>
+</div>
+        </div>
+    </div>
+</div>
+{%endblock%}
+{%block js%}
+<script>
+if (localStorage.getItem('cart') == null) {
+    var cart = {};
+} else {
+    cart = JSON.parse(localStorage.getItem('cart'));
+    updatePopover(cart);
+}
+
+function updatePopover(cart) {
+    let popStr = "";
+    popStr = popStr + "<h5> Items in your cart </h5> <div class = 'my-2 mx-2'>";
+
+    let i = 1;
+    for (var item in cart) {
+        if(cart[item][0]!=0)
+        {popStr += `<b>${i}. </b> ${document.getElementById("name" + item).innerHTML.slice(0,19)}...   Qty: ${cart[item][0]}<br>`
+        i = i + 1;}
+    }
+    popStr += "</div>"
+    popStr += "<a href='{%url 'shop:Checkout'%}' class='btn btn-primary' id = 'checkout'>Checkout</a>"
+    document.getElementById("popcart").setAttribute('data-content', popStr);
+    $('#popcart').popover('show');
+}
+</script>
+{%endblock%}
